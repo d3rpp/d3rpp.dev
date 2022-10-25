@@ -1,5 +1,5 @@
 <header>
-	<a href="/" class="title">d3rpp.dev</a>
+	<a href="/" class="title" on:click={() => window.location.reload()}>d3rpp.dev</a>
 </header>
 
 <style lang="scss">

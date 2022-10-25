@@ -1,9 +1,11 @@
 <script lang="ts">
-	import CrypticText from '$lib/cryptic_text.svelte';
 	import MeWEBP from '../assets/me.webp';
 
 	import { quartOut } from 'svelte/easing';
 	import { fly } from 'svelte/transition';
+
+	import CrypticText from '$lib/cryptic_text.svelte';
+	import CrypticTextRandom from '$lib/cryptic_text_random.svelte';
 
 	const subtitles = [
 		'code man 💻',
@@ -16,9 +18,6 @@
 		'i use arch btw 😳',
 		'aussie lad 🇦🇺',
 	];
-
-	let subtitle_choice =
-		subtitles[Math.floor(Math.random() * subtitles.length)];
 </script>
 
 <section id="top">
@@ -29,11 +28,11 @@
 	/>
 
 	<h1 class="title">
-		<CrypticText wanted_text="Hudson Curren" />
+		<CrypticText wanted_text={'Hudson Curren'} />
 	</h1>
 
 	<h2 class="subtitle">
-		<CrypticText wanted_text={subtitle_choice} />
+		<CrypticTextRandom options={subtitles} />
 	</h2>
 </section>
 
@@ -87,7 +86,7 @@
 			height: 32px;
 		}
 
-		@media screen and (max-width: "#{$text-threshold}"){
+		@media screen and (max-width: "#{$text-threshold}") {
 			h1.title {
 				font-size: 9.5vw;
 			}
