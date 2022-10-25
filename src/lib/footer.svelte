@@ -27,6 +27,8 @@
 		padding: 0px 64px;
 
 		span {
+			text-align: center;
+			
 			span {
 				color: #ee6352;
 			}
