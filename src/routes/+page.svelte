@@ -70,6 +70,8 @@
 			display: grid;
 			place-items: center;
 			text-align: center;
+
+			transition: font-size 200ms index.$ease;
 		}
 
 		h1.title {
