@@ -42,7 +42,7 @@
 		@media screen and (max-width: "#{$inline-breakpoint}") {
 			position: initial;
 			justify-content: center;
-
+      
 			span {
 				padding: 0px 8px;
 				width: 100%;
