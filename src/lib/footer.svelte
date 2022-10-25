@@ -27,6 +27,8 @@
 		padding: 0px 64px;
 
 		span {
+			text-align: center;
+			
 			span {
 				color: #ee6352;
 			}
@@ -39,6 +41,7 @@
 		@media screen and (max-width: "#{$inline-breakpoint}") {
 			position: initial;
 			justify-content: center;
+			padding: 0px 8px;
 		}
 	}
 </style>
