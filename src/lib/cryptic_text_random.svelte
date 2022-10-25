@@ -17,8 +17,6 @@
 	let current_char = 0;
 	let current_attempt = 0;
 
-	let interval_timer: string | number | NodeJS.Timer | undefined;
-
 	const strip_not_unique_chars = (set: string) => {
 		let result = '';
 
