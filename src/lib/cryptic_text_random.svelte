@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
+	import { BASE_CHAR_SET, get_random_char, strip_not_unique_chars } from './utils';
 
 	export let options: string[];
 
@@ -11,27 +12,11 @@
 
 	const MAX_ATTEMPTS_PER_INTERVAL = 3;
 
-	$: CHARSET = strip_not_unique_chars('abcdef123456;:/\\{}()[]' + choice);
+	$: CHARSET = strip_not_unique_chars(BASE_CHAR_SET + choice);
 
 	let displayed_text: string[] = [];
 	let current_char = 0;
 	let current_attempt = 0;
-
-	const strip_not_unique_chars = (set: string) => {
-		let result = '';
-
-		for (let i = 0; i < set.length; i++) {
-			if (result.indexOf(set[i]) < 0) {
-				result += set[i];
-			}
-		}
-
-		return result;
-	};
-
-	const get_random_char = () => {
-		return CHARSET[Math.floor(Math.random() * CHARSET.length)];
-	};
 
 	const spawn = () => {
 		if (current_char >= choice.length - 1) {
@@ -45,7 +30,7 @@
 			current_attempt = 0;
 		}
 
-		let char = get_random_char();
+		let char = get_random_char(CHARSET);
 
 		displayed_text[current_char] = char;
 
