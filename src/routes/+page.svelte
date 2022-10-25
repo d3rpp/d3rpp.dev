@@ -1,15 +1,20 @@
 <script lang="ts">
-	import HackerText from '$lib/hacker_text.svelte';
+	import CrypticText from '$lib/cryptic_text.svelte';
 	import MeWEBP from '../assets/me.webp';
 
 	import { quartOut } from 'svelte/easing';
 	import { fly } from 'svelte/transition';
 
 	const subtitles = [
-		'Code Man',
-		'Fledgling Programmer',
-		'Gamer',
-		'Intern Developer',
+		'code man 💻',
+		'gamer 🎮',
+		'intern developer 💁',
+		'rust enjoyer 🚀',
+		'brogrammer 💪😎',
+		'competitive rower 🚣‍♂️',
+		'apple music user 🎵',
+		'i use arch btw 😳',
+		'aussie lad 🇦🇺',
 	];
 
 	let subtitle_choice =
@@ -24,11 +29,11 @@
 	/>
 
 	<h1 class="title">
-		<HackerText wanted_text="Hudson Curren" />
+		<CrypticText wanted_text="Hudson Curren" />
 	</h1>
 
 	<h2 class="subtitle">
-		<HackerText wanted_text={subtitle_choice} />
+		<CrypticText wanted_text={subtitle_choice} />
 	</h2>
 </section>
 
