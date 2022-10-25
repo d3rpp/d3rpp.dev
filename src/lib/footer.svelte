@@ -17,7 +17,7 @@
 		<a class="ln" href="///linkedin.com/in/hudson-curren/" target="_blank" rel="noreferrer external">
 			<LinkedIn />
 		</a>
-		<a class="ig" href="///instagram.com/d3rpp" target="_blank" rel="noreferrer external">
+		<a class="ig" href="///instagram.com/d3rpp.dev" target="_blank" rel="noreferrer external">
 			<Instagram />
 		</a>
 		<a class="fb" href="///facebook.com/d3rpp.dev" target="_blank" rel="noreferrer external">
