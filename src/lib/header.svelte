@@ -8,6 +8,7 @@
 
 	$header-height: 64px;
 	$inline-threshold: 700px;
+	$bg-threshold: 850px;
 
 	header {
 		position: fixed;
@@ -42,12 +43,15 @@
 
 		@media screen and (max-width: "#{$inline-threshold}") {
 			justify-content: center;
-			background-color: colours.$background;
 
 			.title {
 				padding: 0 8px;
 				width: 100vw;
 			}
+		}
+
+		@media screen and (max-width: "#{$bg-threshold}") {
+			background-color: colours.$background;
 		}
 	}
 </style>
