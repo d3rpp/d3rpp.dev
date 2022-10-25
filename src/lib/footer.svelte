@@ -7,6 +7,7 @@
 
 <style lang="scss">
 	@use '../sass/colours' as colours;
+	@use '../sass/index' as index;
 
 	$footer-height: 64px * 2;
 	$inline-breakpoint: 1200px;
@@ -28,7 +29,7 @@
 
 		span {
 			text-align: center;
-			
+
 			span {
 				color: #ee6352;
 			}
@@ -41,7 +42,11 @@
 		@media screen and (max-width: "#{$inline-breakpoint}") {
 			position: initial;
 			justify-content: center;
-			padding: 0px 8px;
+      
+			span {
+				padding: 0px 8px;
+				width: 100%;
+			}
 		}
 	}
 </style>
