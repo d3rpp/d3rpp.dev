@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { onDestroy, onMount } from 'svelte';
+	import { onMount } from 'svelte';
 
 	export let options: string[];
 
@@ -69,14 +69,7 @@
 		spawn();
 	};
 
-	onMount(() => {
-		spawn();
-		interval_timer = setInterval(rebuild, 5000);
-	});
-
-	onDestroy(() => {
-		clearInterval(interval_timer);
-	});
+	onMount(spawn);
 </script>
 
 {displayed_text.join('')}
