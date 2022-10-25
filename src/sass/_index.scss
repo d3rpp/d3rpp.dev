@@ -1,0 +1,15 @@
+@use './colours' as colours;
+
+@mixin root {
+	font-family: 'JetBrains Mono', monospace;
+	background-color: colours.$background;
+	color: colours.$text;
+}
+
+@mixin jbm200 {
+	font-weight: 200;
+}
+
+@mixin jbm400 {
+	font-weight: 400;
+}
