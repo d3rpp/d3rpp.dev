@@ -13,6 +13,11 @@ const HEAD: Head = {
 	meta: {
 		'og:name': 'd3rpp.dev',
 		'og:description': 'My Site - version 3',
+		'og:image': "/og.png",
+		'twitter:card': 'summary',
+		'twitter:site': '@d3rpp.dev',
+		'twitter:title': 'd3rpp.dev',
+		'twitter:description': 'My Site - version 3'
 	},
 
 	link: [
