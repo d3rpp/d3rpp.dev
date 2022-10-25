@@ -52,11 +52,6 @@
 
 		@media screen and (max-width: "#{$bg-threshold}") {
 			background-color: colours.$background;
-
-			.title {
-				padding: 0 8px;
-				width: 100vw;
-			}
 		}
 	}
 </style>
