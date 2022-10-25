@@ -7,6 +7,7 @@
 	@use '../sass/colours' as colours;
 
 	$header-height: 64px;
+	$header-height-desktop-mutliplier: 1.75;
 	$inline-threshold: 700px;
 	$bg-threshold: 850px;
 
@@ -20,7 +21,7 @@
 		align-items: center;
 
 		width: 100vw;
-		height: $header-height;
+		height: $header-height * $header-height-desktop-mutliplier;
 
 		.title {
 			@include index.jbm200;
@@ -43,6 +44,7 @@
 
 		@media screen and (max-width: "#{$inline-threshold}") {
 			justify-content: center;
+			
 
 			.title {
 				padding: 0 8px;
@@ -52,6 +54,9 @@
 
 		@media screen and (max-width: "#{$bg-threshold}") {
 			background-color: colours.$background;
+			height: $header-height;
+
+			box-shadow: 0px 4px 8px rgba(colours.$background, 0.5);
 		}
 	}
 </style>
