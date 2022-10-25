@@ -1,11 +1,11 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
+	import { onDestroy, onMount } from 'svelte';
 
 	export let options: string[];
 
 	const generate_choice = () => {
 		return options[Math.floor(Math.random() * options.length)];
-	}
+	};
 
 	let choice = generate_choice();
 
@@ -16,6 +16,8 @@
 	let displayed_text: string[] = [];
 	let current_char = 0;
 	let current_attempt = 0;
+
+	let interval_timer: string | number | NodeJS.Timer | undefined;
 
 	const strip_not_unique_chars = (set: string) => {
 		let result = '';
@@ -59,8 +61,22 @@
 		requestAnimationFrame(spawn);
 	};
 
+	export const rebuild = () => {
+		displayed_text = [];
+		choice = generate_choice();
+		current_attempt = 0;
+		current_char = 0;
+		spawn();
+	};
 
-	onMount(spawn);
+	onMount(() => {
+		spawn();
+		interval_timer = setInterval(rebuild, 5000);
+	});
+
+	onDestroy(() => {
+		clearInterval(interval_timer);
+	});
 </script>
 
 {displayed_text.join('')}

@@ -18,6 +18,8 @@
 		'i use arch btw 😳',
 		'aussie lad 🇦🇺',
 	];
+
+	let redo_subtitle: () => void;
 </script>
 
 <section id="top">
@@ -31,8 +33,9 @@
 		<CrypticText wanted_text={'Hudson Curren'} />
 	</h1>
 
-	<h2 class="subtitle">
-		<CrypticTextRandom options={subtitles} />
+	<!-- svelte-ignore a11y-click-events-have-key-events -->
+	<h2 class="subtitle" on:click={redo_subtitle}>
+		<CrypticTextRandom options={subtitles} bind:rebuild={redo_subtitle} />
 	</h2>
 </section>
 
