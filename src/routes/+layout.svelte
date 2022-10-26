@@ -22,7 +22,3 @@
 <Header />
 <slot />
 <Footer />
-
-<style lang="scss">
-// TODO
-</style>
