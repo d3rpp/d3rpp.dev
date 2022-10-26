@@ -20,10 +20,6 @@ const config = {
 			mode: 'auto'
 		},
 
-		prerender: {
-			enabled: true,
-		},
-
 		trailingSlash: 'ignore',
 	},
 
