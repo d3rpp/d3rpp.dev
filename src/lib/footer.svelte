@@ -8,19 +8,19 @@
 
 <footer>
 	<div class="social">
-		<a class="gh" href="///github.com/d3rpp" target="_blank" rel="noreferrer external">
+		<a class="gh" href="///github.com/d3rpp" target="_blank" rel="noreferrer external" aria-label="Github">
 			<Github />
 		</a>
-		<a class="gl" href="///gitlab.com/d3rpp" target="_blank" rel="noreferrer external">
+		<a class="gl" href="///gitlab.com/d3rpp" target="_blank" rel="noreferrer external" aria-label="Gitlab">
 			<Gitlab />
 		</a>
-		<a class="ln" href="///linkedin.com/in/hudson-curren/" target="_blank" rel="noreferrer external">
+		<a class="ln" href="///linkedin.com/in/hudson-curren/" target="_blank" rel="noreferrer external" aria-label="LinkedIn">
 			<LinkedIn />
 		</a>
-		<a class="ig" href="///instagram.com/d3rpp.dev" target="_blank" rel="noreferrer external">
+		<a class="ig" href="///instagram.com/d3rpp.dev" target="_blank" rel="noreferrer external" aria-label="Instagram">
 			<Instagram />
 		</a>
-		<a class="fb" href="///facebook.com/d3rpp.dev" target="_blank" rel="noreferrer external">
+		<a class="fb" href="///facebook.com/d3rpp.dev" target="_blank" rel="noreferrer external" aria-label="Facebook">
 			<Facebook />
 		</a>
 	</div>
