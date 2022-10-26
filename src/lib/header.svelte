@@ -1,5 +1,9 @@
+<svelte:options immutable={true} />
+
 <header>
-	<a href="/" class="title" on:click={() => window.location.reload()}>d3rpp.dev</a>
+	<a href="/" class="title" on:click={() => window.location.reload()}
+		>d3rpp.dev</a
+	>
 </header>
 
 <style lang="scss">
@@ -23,28 +27,8 @@
 		width: 100vw;
 		height: $header-height * $header-height-desktop-mutliplier;
 
-		.title {
-			@include index.jbm200;
-
-			height: $header-height;
-
-			padding: 0 64px;
-
-			display: grid;
-			place-items: center;
-
-			color: colours.$text;
-			text-decoration: none;
-			font-size: 28px;
-
-			&:hover {
-				color: colours.$text-hover;
-			}
-		}
-
 		@media screen and (max-width: "#{$inline-threshold}") {
 			justify-content: center;
-			
 
 			.title {
 				padding: 0 8px;
@@ -57,6 +41,25 @@
 			height: $header-height;
 
 			box-shadow: 0px 4px 8px rgba(colours.$background, 0.5);
+		}
+	}
+
+	.title {
+		@include index.jbm200;
+
+		height: $header-height;
+
+		padding: 0 64px;
+
+		display: grid;
+		place-items: center;
+
+		color: colours.$text;
+		text-decoration: none;
+		font-size: 28px;
+
+		&:hover {
+			color: colours.$text-hover;
 		}
 	}
 </style>

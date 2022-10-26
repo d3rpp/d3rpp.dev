@@ -1,3 +1,5 @@
+<svelte:options immutable={true} />
+
 <svg
 	stroke="currentColor"
 	stroke-linecap="round"

@@ -1,3 +1,5 @@
+<svelte:options immutable={true} />
+
 <script lang="ts">
 	import MeWEBP from '../assets/me.webp';
 
@@ -5,7 +7,6 @@
 	import { fly } from 'svelte/transition';
 
 	import CrypticText from '$lib/cryptic_text.svelte';
-	import CrypticTextRandom from '$lib/cryptic_text_random.svelte';
 
 	const subtitles = [
 		'code man 💻',
@@ -30,12 +31,12 @@
 	/>
 
 	<h1 class="title">
-		<CrypticText wanted_text={'Hudson Curren'} />
+		<CrypticText options={['Hudson Curren']} />
 	</h1>
 
 	<!-- svelte-ignore a11y-click-events-have-key-events -->
 	<h2 class="subtitle" on:click={redo_subtitle}>
-		<CrypticTextRandom options={subtitles} bind:rebuild={redo_subtitle} />
+		<CrypticText options={subtitles} bind:rebuild={redo_subtitle} />
 	</h2>
 </section>
 

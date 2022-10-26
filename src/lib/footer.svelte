@@ -1,3 +1,5 @@
+<svelte:options immutable={true} />
+
 <script lang="ts">
 	import LinkedIn from '$lib/icons/linkedin.svelte';
 	import Facebook from './icons/facebook.svelte';
@@ -8,26 +10,56 @@
 
 <footer>
 	<div class="social">
-		<a class="gh" href="///github.com/d3rpp" target="_blank" rel="noreferrer external" aria-label="Github">
+		<a
+			class="gh"
+			href="///github.com/d3rpp"
+			target="_blank"
+			rel="noreferrer external"
+			aria-label="Github"
+		>
 			<Github />
 		</a>
-		<a class="gl" href="///gitlab.com/d3rpp" target="_blank" rel="noreferrer external" aria-label="Gitlab">
+		<a
+			class="gl"
+			href="///gitlab.com/d3rpp"
+			target="_blank"
+			rel="noreferrer external"
+			aria-label="Gitlab"
+		>
 			<Gitlab />
 		</a>
-		<a class="ln" href="///linkedin.com/in/hudson-curren/" target="_blank" rel="noreferrer external" aria-label="LinkedIn">
+		<a
+			class="ln"
+			href="///linkedin.com/in/hudson-curren/"
+			target="_blank"
+			rel="noreferrer external"
+			aria-label="LinkedIn"
+		>
 			<LinkedIn />
 		</a>
-		<a class="ig" href="///instagram.com/d3rpp.dev" target="_blank" rel="noreferrer external" aria-label="Instagram">
+		<a
+			class="ig"
+			href="///instagram.com/d3rpp.dev"
+			target="_blank"
+			rel="noreferrer external"
+			aria-label="Instagram"
+		>
 			<Instagram />
 		</a>
-		<a class="fb" href="///facebook.com/d3rpp.dev" target="_blank" rel="noreferrer external" aria-label="Facebook">
+		<a
+			class="fb"
+			href="///facebook.com/d3rpp.dev"
+			target="_blank"
+			rel="noreferrer external"
+			aria-label="Facebook"
+		>
 			<Facebook />
 		</a>
 	</div>
-	<span
-		>made with <span>&heart;</span> and
-		<a href="https://kit.svelte.dev">SvelteKit</a></span
-	>
+	<span>
+		made with <span class="h">&heart;</span> and
+		<a href="https://kit.svelte.dev">SvelteKit</a>
+	</span>
 </footer>
 
 <style lang="scss">
@@ -51,17 +83,15 @@
 		align-items: center;
 
 		padding: 0px 64px;
+	}
 
-		@media screen and (max-width: "#{$inline-breakpoint}") {
+	@media screen and (max-width: "#{$inline-breakpoint}") {
+		footer {
 			position: initial;
 			flex-direction: column;
 			justify-content: center;
 
 			padding: 0px 32px;
-
-			span {
-				width: 100%;
-			}
 
 			& > .social {
 				width: Min(400px, 100vw);
@@ -81,6 +111,10 @@
 				}
 			}
 		}
+
+		span {
+			width: 100%;
+		}
 	}
 
 	.social {
@@ -88,7 +122,6 @@
 		justify-content: center;
 		flex-direction: row;
 		flex-wrap: wrap;
-
 
 		$size: 48px;
 		$margin: 8px;
