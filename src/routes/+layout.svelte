@@ -1,5 +1,6 @@
 <script lang="ts">
 	import '../sass/global.scss';
+	import '../sass/jetbrainsmono.scss';
 
 	import Header from '$lib/header.svelte';
 	import Footer from '$lib/footer.svelte';
