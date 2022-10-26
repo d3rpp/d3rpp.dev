@@ -63,7 +63,14 @@
 
 			border-radius: 100%;
 			border: 3px solid colours.$text;
-			box-shadow: 0px 0px 16px 0px rgba(colours.$text-hover, 0.7);
+			box-shadow: 0px 0px 16px 0px rgba(colours.$text, 0.7);
+
+			&:hover {
+				border: 3px solid colours.$text-hover;
+				box-shadow: 0px 0px 12px 0px rgba(colours.$text-hover, 0.7);
+			}			
+
+			transition: border 1000ms index.$ease, box-shadow 200ms index.$ease;
 		}
 
 		h1.title,
@@ -72,7 +79,12 @@
 			place-items: center;
 			text-align: center;
 
-			transition: font-size 200ms index.$ease;
+			&:hover {
+				color: colours.$text-hover;
+				text-shadow: 0px 0px 2px rgba(colours.$text-hover, 0.7);
+			}
+
+			transition: font-size 200ms index.$ease, text-shadow 200ms index.$ease, color 200ms index.$ease;
 		}
 
 		h1.title {

@@ -10,51 +10,15 @@
 
 <footer>
 	<div class="social">
-		<a
-			class="gh"
-			href="///github.com/d3rpp"
-			target="_blank"
-			rel="noreferrer external"
-			aria-label="Github"
-		>
-			<Github />
-		</a>
-		<a
-			class="gl"
-			href="///gitlab.com/d3rpp"
-			target="_blank"
-			rel="noreferrer external"
-			aria-label="Gitlab"
-		>
-			<Gitlab />
-		</a>
-		<a
-			class="ln"
-			href="///linkedin.com/in/hudson-curren/"
-			target="_blank"
-			rel="noreferrer external"
-			aria-label="LinkedIn"
-		>
-			<LinkedIn />
-		</a>
-		<a
-			class="ig"
-			href="///instagram.com/d3rpp.dev"
-			target="_blank"
-			rel="noreferrer external"
-			aria-label="Instagram"
-		>
-			<Instagram />
-		</a>
-		<a
-			class="fb"
-			href="///facebook.com/d3rpp.dev"
-			target="_blank"
-			rel="noreferrer external"
-			aria-label="Facebook"
-		>
-			<Facebook />
-		</a>
+		<Github />
+
+		<Gitlab />
+
+		<LinkedIn />
+
+		<Instagram />
+
+		<Facebook />
 	</div>
 	<span>
 		made with <span class="h">&heart;</span> and
@@ -100,14 +64,14 @@
 				$new_size: Min(10vw, 56px);
 				$new_icon_size: Min($new_size / 2, 32px);
 
-				a {
+				:global(a) {
 					width: $new_size;
 					height: $new_size;
+				}
 
-					:global(svg) {
-						width: $new_icon_size;
-						height: $new_icon_size;
-					}
+				:global(svg) {
+					width: $new_icon_size;
+					height: $new_icon_size;
 				}
 			}
 		}
@@ -125,8 +89,9 @@
 
 		$size: 48px;
 		$margin: 8px;
+		$icon_size: 24px;
 
-		a {
+		:global(a) {
 			width: $size;
 			height: $size;
 
@@ -134,6 +99,18 @@
 
 			display: grid;
 			place-items: center;
+		}
+
+		:global(a:hover svg) {
+			stroke: colours.$text-hover;
+		}
+
+		:global(a svg) {
+			fill: transparent;
+			stroke: colours.$text;
+
+			width: $icon_size;
+			height: $icon_size;
 		}
 	}
 
@@ -145,7 +122,11 @@
 		}
 
 		a {
-			color: colours.$text-hover;
+			color: colours.$text;
+
+			&:hover {
+				color: colours.$text-hover;
+			}
 		}
 	}
 </style>
