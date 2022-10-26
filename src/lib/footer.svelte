@@ -55,7 +55,7 @@
 			flex-direction: column;
 			justify-content: center;
 
-			padding: 0px 32px;
+			padding: 0px 32px 16px;
 
 			& > .social {
 				width: Min(400px, 100vw);
@@ -115,7 +115,10 @@
 	}
 
 	span {
+		vertical-align: middle;
 		text-align: center;
+		height: 64px;
+		line-height: 64px;
 
 		span {
 			color: #ee6352;
