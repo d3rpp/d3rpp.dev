@@ -56,7 +56,7 @@
 		justify-content: center;
 		align-items: center;
 
-		$img-size: Min(40vh, Min(75vw, 250px));
+		$img-size: Min(40vh, Min(75vw, 250px, 25vh));
 
 		img {
 			width: $img-size;
@@ -79,24 +79,18 @@
 		h1.title {
 			font-weight: 200;
 			margin: 32px 0;
-			font-size: 48px;
+			font-size: Min(48px, 9.5vw, 10vh);
 
 			height: 64px;
 		}
 
 		h2.subtitle {
 			font-weight: 200;
-			height: 32px;
-		}
+			font-size: Min(32px, 6vw, 5vh);
 
-		@media screen and (max-width: "#{$text-threshold}") {
-			h1.title {
-				font-size: 9.5vw;
-			}
-
-			h2.subtitle {
-				font-size: 6vw;
-			}
+			text-align: center;
+			display: grid;
+			place-items: center;
 		}
 	}
 </style>
