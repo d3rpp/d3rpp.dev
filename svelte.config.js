@@ -20,7 +20,11 @@ const config = {
 			mode: 'auto'
 		},
 
-		trailingSlash: 'always',
+		prerender: {
+			enabled: true,
+		},
+
+		trailingSlash: 'ignore',
 	},
 
 	compilerOptions: {
