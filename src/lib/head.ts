@@ -11,6 +11,8 @@ const HEAD: Head = {
 	title: 'd3rpp.dev',
 
 	meta: {
+		'description': 'd3rpp.dev portfolio site',
+		'theme-color': '#121212',
 		'og:name': 'd3rpp.dev',
 		'og:description': 'My Site - version 3',
 		'og:image': "/og.png",
