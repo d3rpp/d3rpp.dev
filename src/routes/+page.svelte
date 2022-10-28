@@ -63,11 +63,11 @@
 
 			border-radius: 100%;
 			border: 3px solid colours.$text;
-			box-shadow: 0px 0px 16px 0px rgba(colours.$text, 0.7);
+			box-shadow: 0px 0px 16px 0px rgba(colours.$text, 0.2);
 
 			&:hover {
 				border: 3px solid colours.$text-hover;
-				box-shadow: 0px 0px 12px 0px rgba(colours.$text-hover, 0.7);
+				box-shadow: 0px 0px 12px 0px rgba(colours.$text-hover, 0.2);
 			}			
 
 			transition: border 1000ms index.$ease, box-shadow 200ms index.$ease;
