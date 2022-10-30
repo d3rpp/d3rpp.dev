@@ -120,6 +120,8 @@
 		height: 64px;
 		line-height: 64px;
 
+		user-select: none;
+
 		span {
 			color: #ee6352;
 		}

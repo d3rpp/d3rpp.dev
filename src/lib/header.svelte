@@ -49,6 +49,8 @@
 
 		height: $header-height;
 
+		user-select: none;
+
 		padding: 0 64px;
 
 		display: grid;

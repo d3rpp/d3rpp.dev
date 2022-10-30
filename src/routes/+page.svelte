@@ -6,18 +6,19 @@
 
 	import CrypticText from '$lib/cryptic_text.svelte';
 
-	const subtitles = [
-		'code man 💻',
-		'gamer 🎮',
-		'intern developer 💁',
-		'rust enjoyer 🚀',
-		'brogrammer 💪😎',
-		'competitive rower 🚣‍♂️',
-		'apple music user 🎵',
-		'i use arch btw 😳',
-		'aussie lad 🇦🇺',
+	const names = [
+		'Hudson Curren',
+		'Huddy Buddy',
 	];
 
+	const subtitles = [
+		'code man',
+		'rust enjoyer',
+		'brogrammer',
+		'competitive rower',
+	];
+
+	let redo_title: () => void;
 	let redo_subtitle: () => void;
 </script>
 
@@ -27,13 +28,12 @@
 		alt="me"
 		in:fly={{ duration: 200, easing: quartOut, delay: 100 }}
 	/>
-
-	<h1 class="title">
-		<CrypticText options={['Hudson Curren']} />
+	
+	<h1 class="title" on:mousedown={redo_title}>
+		<CrypticText options={names} bind:rebuild={redo_title} />
 	</h1>
 
-	<!-- svelte-ignore a11y-click-events-have-key-events -->
-	<h2 class="subtitle" on:click={redo_subtitle}>
+	<h2 class="subtitle" on:mousedown={redo_subtitle}>
 		<CrypticText options={subtitles} bind:rebuild={redo_subtitle} />
 	</h2>
 </section>
@@ -61,6 +61,8 @@
 			width: $img-size;
 			height: $img-size;
 
+			user-select: none;
+
 			border-radius: 100%;
 			border: 3px solid colours.$text;
 			box-shadow: 0px 0px 16px 0px rgba(colours.$text, 0.2);
@@ -75,9 +77,9 @@
 
 		h1.title,
 		h2.subtitle {
-			display: grid;
-			place-items: center;
 			text-align: center;
+
+			user-select: none;
 
 			&:hover {
 				color: colours.$text-hover;
@@ -93,11 +95,15 @@
 			font-size: Min(48px, 9.5vw, 10vh);
 
 			height: 64px;
+			line-height: 64px;
 		}
 
 		h2.subtitle {
 			font-weight: 200;
 			font-size: Min(32px, 6vw, 5vh);
+
+			height: 43px;
+			line-height: 43px;
 
 			text-align: center;
 			display: grid;
