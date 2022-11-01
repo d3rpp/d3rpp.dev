@@ -1,6 +1,10 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { BASE_CHAR_SET, get_random_char, strip_not_unique_chars } from './utils';
+	import {
+		BASE_CHAR_SET,
+		get_random_char,
+		strip_not_unique_chars,
+	} from './utils';
 
 	export let options: string[];
 
@@ -55,4 +59,4 @@
 	onMount(spawn);
 </script>
 
-{displayed_text.join('')}
+<slot animated={displayed_text.join('')} {choice} />

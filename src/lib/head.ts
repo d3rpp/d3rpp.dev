@@ -1,10 +1,10 @@
 export interface Head {
 	title: string;
-	meta: Record<string, string>,
+	meta: Record<string, string>;
 	link: {
-		rel: string,
-		href: string,
-	}[]
+		rel: string;
+		href: string;
+	}[];
 }
 
 const HEAD: Head = {
@@ -15,11 +15,11 @@ const HEAD: Head = {
 		'theme-color': '#121212',
 		'og:name': 'd3rpp.dev',
 		'og:description': 'My Site - version 3',
-		'og:image': "/og.png",
+		'og:image': '/og.png',
 		'twitter:card': 'summary',
 		'twitter:site': '@d3rpp.dev',
 		'twitter:title': 'd3rpp.dev',
-		'twitter:description': 'My Site - version 3'
+		'twitter:description': 'My Site - version 3',
 	},
 
 	link: [
@@ -27,6 +27,10 @@ const HEAD: Head = {
 			rel: 'preconnect',
 			href: 'https://fonts.gstatic.com',
 		},
+		{
+			rel: 'canonical',
+			href: 'https://d3rpp.dev/'
+		}
 	],
 };
 

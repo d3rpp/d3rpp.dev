@@ -13,8 +13,8 @@
 <svelte:head>
 	<title>{HEAD.title}</title>
 
-	{#each Object.keys(HEAD.meta) as key} 
-		<meta name={key} content={HEAD.meta[key]}>
+	{#each Object.keys(HEAD.meta) as key}
+		<meta name={key} content={HEAD.meta[key]} />
 	{/each}
 
 	{#each HEAD.link as link}

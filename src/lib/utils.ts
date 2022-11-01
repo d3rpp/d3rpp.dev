@@ -12,7 +12,6 @@ export const strip_not_unique_chars = (set: string) => {
 	return result;
 };
 
-
 export const get_random_char = (set: string) => {
 	return set[Math.floor(Math.random() * set.length)];
 };

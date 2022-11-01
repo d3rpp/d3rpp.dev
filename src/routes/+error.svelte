@@ -4,7 +4,12 @@
 	import { page } from '$app/stores';
 </script>
 
-<section>
+<section
+	aria-invalid="true"
+	aria-errormessage={$page.error == null
+		? null
+		: `${$page.status} ${$page.error.message}`}
+>
 	<h1 class="oh-no">Oh No, a</h1>
 	<h1 class="status">{$page.status}</h1>
 	{#if $page.error}
@@ -37,7 +42,8 @@
 			font-size: Min(5em, 10vw, 6.66vh);
 		}
 
-		.oh-no, .occured {
+		.oh-no,
+		.occured {
 			font-size: Min(3em, 6vw, 4vh);
 			font-weight: 500;
 		}

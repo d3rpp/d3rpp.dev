@@ -6,10 +6,7 @@
 
 	import CrypticText from '$lib/cryptic_text.svelte';
 
-	const names = [
-		'Hudson Curren',
-		'Huddy Buddy',
-	];
+	const names = ['Hudson Curren', 'Huddy Buddy'];
 
 	const subtitles = [
 		'code man',
@@ -28,14 +25,28 @@
 		alt="me"
 		in:fly={{ duration: 200, easing: quartOut, delay: 100 }}
 	/>
-	
-	<h1 class="title" on:mousedown={redo_title}>
-		<CrypticText options={names} bind:rebuild={redo_title} />
-	</h1>
 
-	<h2 class="subtitle" on:mousedown={redo_subtitle}>
-		<CrypticText options={subtitles} bind:rebuild={redo_subtitle} />
-	</h2>
+	<CrypticText
+		options={names}
+		bind:rebuild={redo_title}
+		let:animated
+		let:choice
+	>
+		<h1 class="title" on:mousedown={redo_title} aria-label={choice}>
+			{animated}
+		</h1>
+	</CrypticText>
+
+	<CrypticText
+		options={subtitles}
+		bind:rebuild={redo_subtitle}
+		let:animated
+		let:choice
+	>
+		<h2 class="subtitle" on:mousedown={redo_subtitle} aria-label={choice}>
+			{animated}
+		</h2>
+	</CrypticText>
 </section>
 
 <style lang="scss">
@@ -70,7 +81,7 @@
 			&:hover {
 				border: 3px solid colours.$text-hover;
 				box-shadow: 0px 0px 12px 0px rgba(colours.$text-hover, 0.2);
-			}			
+			}
 
 			transition: border 1000ms index.$ease, box-shadow 200ms index.$ease;
 		}
@@ -86,7 +97,8 @@
 				text-shadow: 0px 0px 2px rgba(colours.$text-hover, 0.7);
 			}
 
-			transition: font-size 200ms index.$ease, text-shadow 200ms index.$ease, color 200ms index.$ease;
+			transition: font-size 200ms index.$ease,
+				text-shadow 200ms index.$ease, color 200ms index.$ease;
 		}
 
 		h1.title {
