@@ -97,8 +97,7 @@
 				text-shadow: 0px 0px 2px rgba(colours.$text-hover, 0.7);
 			}
 
-			transition: font-size 200ms index.$ease,
-				text-shadow 200ms index.$ease, color 200ms index.$ease;
+			transition: text-shadow 200ms index.$ease, color 200ms index.$ease;
 		}
 
 		h1.title {
