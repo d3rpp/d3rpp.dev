@@ -1,4 +1,4 @@
-export const BASE_CHAR_SET = 'abcdef123456';
+export const BASE_CHAR_SET = 'abcdef123456{}@#$%:';
 
 export const strip_not_unique_chars = (set: string) => {
 	let result = '';
@@ -15,3 +15,7 @@ export const strip_not_unique_chars = (set: string) => {
 export const get_random_char = (set: string) => {
 	return set[Math.floor(Math.random() * set.length)];
 };
+
+export const variables = {
+	transition_duration: 200
+}

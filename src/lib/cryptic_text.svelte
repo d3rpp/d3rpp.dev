@@ -1,10 +1,15 @@
+<!-- 
+	THIS IS OVERENGINEERED AS FUCK
+ -->
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import {
-		BASE_CHAR_SET,
-		get_random_char,
-		strip_not_unique_chars,
-	} from './utils';
+	import { BASE_CHAR_SET, get_random_char } from './utils';
+
+	const MAXIMUM_ATTEMPTS = 10;
+
+	const GLOBAL_MULTIPLIER = 1.5;
+	const MAGIC_NUMBER_FINISH = 2 / 3;
+	const MAGIC_NUMBER_START = 4 / 3;
 
 	export let options: string[];
 
@@ -13,50 +18,57 @@
 	};
 
 	let choice = generate_choice();
+	let display: string[] = Array<string>(choice.length).fill('&nbsp;');
 
-	const MAX_ATTEMPTS_PER_INTERVAL = 3;
+	// -1           = complete char in
+	// 0            = attempt 0
+	// other number = current attempt
+	let attempts: number[] = Array<number>(choice.length).fill(0);
 
-	$: CHARSET = strip_not_unique_chars(BASE_CHAR_SET + choice);
+	const loop = () => {
+		let old = choice.split('');
 
-	let displayed_text: string[] = [];
-	let current_char = 0;
-	let current_attempt = 0;
+		choice.split('').forEach((char, index) => {
+			if (
+				attempts[index] <
+				(index * MAGIC_NUMBER_START)
+			) {
+				// create new text as the animation goes
+				// gives it a cryptic typing effect
 
-	const spawn = () => {
-		if (current_char >= choice.length - 1) {
-			displayed_text = choice.split('');
+				display[index] = '&nbsp;';
+				attempts[index] += 1;
+			} else if (
+				attempts[index] >=
+				(MAXIMUM_ATTEMPTS * Math.pow(index, MAGIC_NUMBER_FINISH)) /
+					GLOBAL_MULTIPLIER
+			) {
+				// reached max number of attemps, according to some weird curve that I made here
+				//
+				// looks like this image
+				// link: https://cdn.discordapp.com/attachments/1039658860362874982/1040039024003399750/image.png
+
+				display[index] = char;
+				attempts[index] = MAXIMUM_ATTEMPTS * index;
+			} else {
+				// set random char again
+				display[index] = get_random_char(BASE_CHAR_SET);
+				attempts[index] += 1;
+			}
+		});
+
+		if (old == display) {
+			attempts = [];
 			return;
-		}
+		};
 
-		if (current_attempt >= MAX_ATTEMPTS_PER_INTERVAL) {
-			displayed_text[current_char] = choice[current_char];
-			current_char += 1;
-			current_attempt = 0;
-		}
-
-		let char = get_random_char(CHARSET);
-
-		displayed_text[current_char] = char;
-
-		if (char == choice[current_char]) {
-			current_char += 1;
-			current_attempt = 0;
-		}
-
-		current_attempt += 1;
-
-		requestAnimationFrame(spawn);
+		// requestAnimationFrame(loop)
+		setTimeout(() => requestAnimationFrame(loop), 20);
 	};
 
-	export const rebuild = () => {
-		displayed_text = [];
-		choice = generate_choice();
-		current_attempt = 0;
-		current_char = 0;
-		spawn();
-	};
-
-	onMount(spawn);
+	onMount(() => {
+		loop();
+	});
 </script>
 
-<slot animated={displayed_text.join('')} {choice} />
+<slot {display} {choice} />

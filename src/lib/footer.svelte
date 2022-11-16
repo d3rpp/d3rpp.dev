@@ -1,4 +1,4 @@
-<svelte:options immutable={true} />
+
 
 <script lang="ts">
 	import LinkedIn from '$lib/icons/linkedin.svelte';

@@ -1,4 +1,4 @@
-<svelte:options immutable={true} />
+
 
 <a
 	class="fb"

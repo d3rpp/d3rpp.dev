@@ -1,5 +1,3 @@
-<svelte:options immutable={true} />
-
 <script lang="ts">
 	import { page } from '$app/stores';
 </script>
@@ -12,9 +10,15 @@
 >
 	<h1 class="oh-no">Oh No, a</h1>
 	<h1 class="status">{$page.status}</h1>
-	{#if $page.error}
-		<h1 class="status-text">{$page.error.message}</h1>
-	{/if}
+
+	<h1 class="status-text">
+		{#if $page.error}
+			{$page.error.message}
+		{:else}
+			error
+		{/if}
+	</h1>
+
 	<h1 class="occured">has occured</h1>
 </section>
 

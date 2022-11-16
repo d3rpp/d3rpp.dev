@@ -16,6 +16,10 @@ const config = {
 			assets: "public"
 		},
 
+		prerender: {
+			enabled: false,
+		},
+
 		csp: {
 			mode: 'auto'
 		},
