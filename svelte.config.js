@@ -23,6 +23,7 @@ const config = {
 		csp: {
 			mode: 'auto',
 			directives: {
+				"style-src": ["self", "unsafe-inline"],
 				"default-src": ["self"]
 			}
 		},
