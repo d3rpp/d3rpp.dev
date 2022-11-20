@@ -1,5 +1,5 @@
 <script lang="ts">
-	import MeWEBP from '../assets/me.webp';
+	import MeWEBP from '$assets/me.webp';
 
 	import { quartOut } from 'svelte/easing';
 	import { fade, fly } from 'svelte/transition';

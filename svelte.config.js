@@ -21,7 +21,14 @@ const config = {
 		},
 
 		csp: {
-			mode: 'auto'
+			mode: 'auto',
+			directives: {
+				"default-src": ["self"]
+			}
+		},
+
+		alias: {
+			'$assets': "src/assets"
 		},
 
 		trailingSlash: 'ignore',
