@@ -201,6 +201,11 @@ balanced-match@^1.0.0:
   resolved "https://registry.yarnpkg.com/balanced-match/-/balanced-match-1.0.2.tgz#e83e3a7e3f300b34cb9d87f615fa0cbf357690ee"
   integrity sha512-3oSeUO0TMV67hN1AmbXsK4yaqU7tjiHlbxRDZOpH0KW9+CeX4bRAaX0Anxt0tx2MrpRpWwQaPwIlISEJhYU5Pw==
 
+base26@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/base26/-/base26-0.1.0.tgz#38dbe74a46c54eb49b4e962f8446e1fbc2400075"
+  integrity sha512-fu39ovAEARSpkOZJQjbQagPdW4sEz3d1owQx3oZey5b0GaTtsLddOfKYx+LEif9U20Xn9SlJ4zayERt0qXyhDQ==
+
 binary-extensions@^2.0.0:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/binary-extensions/-/binary-extensions-2.2.0.tgz#75f502eeaf9ffde42fc98829645be4ea76bd9e2d"

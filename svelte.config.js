@@ -1,5 +1,6 @@
 import adapter from '@sveltejs/adapter-vercel';
 import preprocess from 'svelte-preprocess';
+import { to } from 'base26';
 
 let hashmap = {};
 
@@ -13,7 +14,7 @@ const config = {
 		adapter: adapter(),
 
 		files: {
-			assets: "public"
+			assets: 'public',
 		},
 
 		prerender: {
@@ -23,13 +24,13 @@ const config = {
 		csp: {
 			mode: 'auto',
 			directives: {
-				"style-src": ["self", "unsafe-inline"],
-				"default-src": ["self"]
-			}
+				'style-src': ['self', 'unsafe-inline'],
+				'default-src': ['self'],
+			},
 		},
 
 		alias: {
-			'$assets': "src/assets"
+			$assets: 'src/assets',
 		},
 
 		trailingSlash: 'ignore',
@@ -40,12 +41,13 @@ const config = {
 			let content_hash = hash(`${name}${filename}${css}`);
 
 			if (!hashmap[content_hash]) {
-				hashmap[content_hash] = Object.keys(hashmap).length.toString(16);
+				hashmap[content_hash] =
+					to(Object.keys(hashmap).length + 1);
 			}
 
-			return `d${hashmap[content_hash]}`;
-		}
-	}
+			return hashmap[content_hash];
+		},
+	},
 };
 
 export default config;

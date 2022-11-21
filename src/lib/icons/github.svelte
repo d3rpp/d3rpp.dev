@@ -1,5 +1,3 @@
-
-
 <a
 	class="gh"
 	href="///github.com/d3rpp"

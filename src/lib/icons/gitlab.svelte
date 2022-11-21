@@ -1,5 +1,3 @@
-
-
 <a
 	class="gl"
 	href="///gitlab.com/d3rpp"

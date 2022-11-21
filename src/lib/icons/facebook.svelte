@@ -1,5 +1,3 @@
-
-
 <a
 	class="fb"
 	href="///facebook.com/d3rpp.dev"

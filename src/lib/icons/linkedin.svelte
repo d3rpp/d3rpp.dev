@@ -1,5 +1,3 @@
-
-
 <a
 	class="ln"
 	href="///linkedin.com/in/hudson-curren/"
