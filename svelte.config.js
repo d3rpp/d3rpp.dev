@@ -24,6 +24,7 @@ const config = {
 		csp: {
 			mode: 'auto',
 			directives: {
+				'script-src': ['self', "static.cloudflareinsights.com"],
 				'style-src': ['self', 'unsafe-inline'],
 				'default-src': ['self'],
 			},
