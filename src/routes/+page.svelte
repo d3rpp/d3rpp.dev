@@ -13,7 +13,6 @@
 		'code man',
 		'rust enjoyer',
 		'brogrammer',
-		'competitive rower',
 	];
 
 	let redo_title: () => void;
