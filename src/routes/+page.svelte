@@ -7,12 +7,25 @@
 	import CrypticText from '$lib/cryptic_text.svelte';
 	import { variables } from '$lib/utils';
 
-	const names = ['Hudson Curren'];
+	const names = [
+		'Huddy Buddy', 
+		'Hudson Curren', 
+		'Hudson Curren', 
+		'Hudson Curren', 
+		'Hudson Curren', 
+		'Hudson Curren', 
+		'Hudson Curren', 
+		'Hudson Curren', 
+		'Hudson Curren', 
+		'Hudson Curren',
+	];
 
 	const subtitles = [
 		'code man',
 		'rust enjoyer',
-		'brogrammer',
+		'cider developer',
+		"cryptofyre's bitch", 
+		'brogrammer-ish',
 	];
 
 	let redo_title: () => void;
@@ -130,7 +143,7 @@
 			// 		height: 150px;
 			// 		border-top: 1px solid rgba(colours.$text-hover, 0.1);
 			// 	}
-			// 	
+			//
 			// 	a {
 			// 		font-size: 18px;
 			// 		height: 100px;
