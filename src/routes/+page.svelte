@@ -16,7 +16,7 @@
 		"cryptofyre's bitch", 
 		...Array(10).fill('code man'), 
 		...Array(10).fill('rust enjoyer'), 
-		...Array(10).fill('cider developer'), 
+		...Array(20).fill('cider developer'), 
 		...Array(10).fill('brogrammer-ish'), 
 	];
 
