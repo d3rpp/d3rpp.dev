@@ -21,10 +21,22 @@
 	];
 
 	const subtitles = [
+		"cryptofyre's bitch", 
+		'code man', 
+		'code man', 
+		'code man',
 		'code man',
 		'rust enjoyer',
+		'rust enjoyer',
+		'rust enjoyer',
+		'rust enjoyer',
 		'cider developer',
-		"cryptofyre's bitch", 
+		'cider developer',
+		'cider developer',
+		'cider developer',
+		'brogrammer-ish',
+		'brogrammer-ish',
+		'brogrammer-ish',
 		'brogrammer-ish',
 	];
 
