@@ -9,35 +9,15 @@
 
 	const names = [
 		'Huddy Buddy  ', 
-		'Hudson Curren', 
-		'Hudson Curren', 
-		'Hudson Curren', 
-		'Hudson Curren', 
-		'Hudson Curren', 
-		'Hudson Curren', 
-		'Hudson Curren', 
-		'Hudson Curren', 
-		'Hudson Curren',
+		...Array(9).fill('Hudson Curren'), 
 	];
 
 	const subtitles = [
 		"cryptofyre's bitch", 
-		'code man', 
-		'code man', 
-		'code man',
-		'code man',
-		'rust enjoyer',
-		'rust enjoyer',
-		'rust enjoyer',
-		'rust enjoyer',
-		'cider developer',
-		'cider developer',
-		'cider developer',
-		'cider developer',
-		'brogrammer-ish',
-		'brogrammer-ish',
-		'brogrammer-ish',
-		'brogrammer-ish',
+		...Array(10).fill('code man'), 
+		...Array(10).fill('rust enjoyer'), 
+		...Array(10).fill('cider developer'), 
+		...Array(10).fill('brogrammer-ish'), 
 	];
 
 	let redo_title: () => void;
