@@ -8,7 +8,7 @@
 	import { variables } from '$lib/utils';
 
 	const names = [
-		'Huddy Buddy', 
+		'Huddy Buddy  ', 
 		'Hudson Curren', 
 		'Hudson Curren', 
 		'Hudson Curren', 
@@ -63,7 +63,7 @@
 		>
 			<CrypticText options={names} let:display let:choice>
 				<h1 class="title" on:mousedown={redo_title} aria-label={choice}>
-					{@html display.join('')}
+					{@html display.join('').replaceAll(' ', '&nbsp;')}
 				</h1>
 			</CrypticText>
 
@@ -73,7 +73,7 @@
 					on:mousedown={redo_subtitle}
 					aria-label={choice}
 				>
-					{@html display.join('')}
+					{@html display.join('').replaceAll(' ', '&nbsp;')}
 				</h2>
 			</CrypticText>
 		</div>
