@@ -7,17 +7,14 @@
 	import CrypticText from '$lib/cryptic_text.svelte';
 	import { variables } from '$lib/utils';
 
-	const names = [
-		'Huddy Buddy  ', 
-		...Array(9).fill('Hudson Curren'), 
-	];
+	const names = ['Huddy Buddy  ', ...Array(9).fill('Hudson Curren')];
 
 	const subtitles = [
-		"cryptofyre's bitch", 
-		...Array(10).fill('code man'), 
-		...Array(10).fill('rust enjoyer'), 
-		...Array(20).fill('cider developer'), 
-		...Array(10).fill('brogrammer-ish'), 
+		"cryptofyre's bitch",
+		...Array(10).fill('code man'),
+		...Array(10).fill('rust enjoyer'),
+		...Array(20).fill('cider developer'),
+		...Array(10).fill('brogrammer-ish'),
 	];
 
 	let redo_title: () => void;
@@ -89,6 +86,7 @@
 
 	$text-threshold: 1000px;
 	$nav-threshold: 750px;
+	$bg-threshold: 850px;
 
 	section {
 		width: 100vw;
@@ -100,6 +98,10 @@
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
+
+		@media screen and (max-width: "#{$bg-threshold}") {
+			padding-top: 75px;
+		}
 
 		.container {
 			margin: 0 auto;
