@@ -1,11 +1,8 @@
-
-
 <script lang="ts">
 	import LinkedIn from '$lib/icons/linkedin.svelte';
-	import Facebook from './icons/facebook.svelte';
 	import Github from './icons/github.svelte';
 	import Gitlab from './icons/gitlab.svelte';
-	import Instagram from './icons/instagram.svelte';
+	import Discord from './icons/discord.svelte';
 </script>
 
 <footer>
@@ -16,9 +13,7 @@
 
 		<LinkedIn />
 
-		<Instagram />
-
-		<Facebook />
+		<Discord />
 	</div>
 	<span>
 		made with <span class="h">&heart;</span> and
